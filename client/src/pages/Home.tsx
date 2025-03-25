@@ -20,6 +20,7 @@ export default function Home() {
         <header className="text-center mb-6">
           <h1 className="text-2xl font-bold">Ellon Score Keeper</h1>
           <p className="text-sm text-gray-600">Track scores and time your matches</p>
+          <p className="text-xs mt-1 text-blue-600 italic">Tip: Click the pencil icon to edit team names</p>
         </header>
 
         <TimerDisplay 

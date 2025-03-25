@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { FiEdit } from "react-icons/fi";
 
 interface TeamScoreProps {
   team: "home" | "away";
@@ -55,15 +56,18 @@ export default function TeamScore({
       <div className="team-name-container relative">
         {!isEditing ? (
           <>
-            <h2 className={`team-name text-xl font-bold ${teamColor.text} mb-2 text-center`}>
-              {name}
-            </h2>
-            <button 
-              className="edit-name-btn text-xs absolute right-0 top-0 text-gray-500 hover:text-gray-700"
-              onClick={handleEditToggle}
-            >
-              <i className="fas fa-pencil-alt"></i>
-            </button>
+            <div className="flex items-center justify-center space-x-2">
+              <h2 className={`team-name text-xl font-bold ${teamColor.text} mb-2 text-center`}>
+                {name}
+              </h2>
+              <button 
+                className="edit-name-btn p-1 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 hover:text-gray-800"
+                onClick={handleEditToggle}
+                title="Edit team name"
+              >
+                <FiEdit size={14} />
+              </button>
+            </div>
           </>
         ) : (
           <input 
