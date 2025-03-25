@@ -4,8 +4,8 @@ import type { GameState, Team } from "@shared/schema";
 // Default initial state
 const DEFAULT_STATE: GameState = {
   teams: {
-    home: { name: "Team Blue", score: 0 },
-    away: { name: "Team Red", score: 0 }
+    home: { name: "Ellon", score: 0 },
+    away: { name: "Opposition", score: 0 }
   },
   timeInSeconds: 0,
   timerRunning: false
@@ -74,6 +74,20 @@ export default function useScoreKeeper() {
       }
     }));
   }, []);
+  
+  // Decrement team score
+  const decrementScore = useCallback((team: "home" | "away") => {
+    setGameState((prev) => ({
+      ...prev,
+      teams: {
+        ...prev.teams,
+        [team]: {
+          ...prev.teams[team],
+          score: Math.max(0, prev.teams[team].score - 1) // Prevent negative scores
+        }
+      }
+    }));
+  }, []);
 
   // Toggle timer state
   const toggleTimer = useCallback(() => {
@@ -118,6 +132,7 @@ export default function useScoreKeeper() {
   return {
     gameState,
     incrementScore,
+    decrementScore,
     toggleTimer,
     resetTimer,
     updateTeamName,

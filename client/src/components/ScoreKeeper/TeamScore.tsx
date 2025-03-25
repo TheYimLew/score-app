@@ -6,6 +6,7 @@ interface TeamScoreProps {
   name: string;
   score: number;
   onIncrement: () => void;
+  onDecrement?: () => void;
   onNameChange: (name: string) => void;
 }
 
@@ -13,22 +14,23 @@ export default function TeamScore({
   team, 
   name, 
   score, 
-  onIncrement, 
+  onIncrement,
+  onDecrement, 
   onNameChange 
 }: TeamScoreProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(name);
 
   const teamColor = team === "home" ? {
-    bg: "bg-blue-100",
-    border: "border-team-blue",
-    text: "text-team-blue",
-    button: "bg-team-blue hover:bg-blue-800"
+    bg: "bg-yellow-100",
+    border: "border-maroon",
+    text: "text-maroon",
+    button: "bg-maroon hover:bg-maroon/90"
   } : {
     bg: "bg-red-100",
-    border: "border-team-red",
-    text: "text-team-red",
-    button: "bg-team-red hover:bg-red-800"
+    border: "border-red-800",
+    text: "text-red-800",
+    button: "bg-red-800 hover:bg-red-900"
   };
 
   const handleEditToggle = () => {
