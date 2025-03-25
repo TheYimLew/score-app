@@ -35,6 +35,7 @@ export default function Home() {
             name={gameState.teams.home.name}
             score={gameState.teams.home.score}
             onIncrement={() => incrementScore("home")}
+            onDecrement={() => decrementScore("home")}
             onNameChange={(name) => updateTeamName("home", name)}
           />
           
@@ -43,6 +44,7 @@ export default function Home() {
             name={gameState.teams.away.name}
             score={gameState.teams.away.score}
             onIncrement={() => incrementScore("away")}
+            onDecrement={() => decrementScore("away")}
             onNameChange={(name) => updateTeamName("away", name)}
           />
         </div>

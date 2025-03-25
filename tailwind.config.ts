@@ -11,6 +11,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        maroon: "#800000", // Ellon Rugby Club maroon color
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

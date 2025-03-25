@@ -81,12 +81,22 @@ export default function TeamScore({
       <div className={`score text-[5rem] font-black text-center ${teamColor.text} my-4`}>
         {score}
       </div>
-      <button 
-        className={`increment-score w-full py-3 ${teamColor.button} text-white rounded-md font-bold text-xl shadow-md transition active:transform active:scale-95`}
-        onClick={onIncrement}
-      >
-        <i className="fas fa-plus mr-1"></i> Add Point
-      </button>
+      <div className="grid grid-cols-2 gap-3">
+        <button 
+          className={`increment-score w-full py-3 ${teamColor.button} text-white rounded-md font-bold text-lg shadow-md transition active:transform active:scale-95`}
+          onClick={onIncrement}
+        >
+          <i className="fas fa-plus mr-1"></i> Add Try
+        </button>
+        {onDecrement && (
+          <button 
+            className={`decrement-score w-full py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-md font-bold text-lg shadow-md transition active:transform active:scale-95`}
+            onClick={onDecrement}
+          >
+            <i className="fas fa-minus mr-1"></i> Deduct
+          </button>
+        )}
+      </div>
     </div>
   );
 }

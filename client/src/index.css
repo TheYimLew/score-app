@@ -11,3 +11,13 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .border-maroon {
+    border-color: #800000;
+  }
+  
+  .text-maroon {
+    color: #800000;
+  }
+}
