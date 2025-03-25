@@ -18,7 +18,7 @@ export default function Home() {
     <div className="bg-gray-100 font-sans antialiased text-gray-900 min-h-screen">
       <div className="max-w-md mx-auto p-4 sm:p-6">
         <header className="text-center mb-6">
-          <h1 className="text-2xl font-bold">Ellon Score Keeper</h1>
+          <h1 className="text-2xl font-bold">FitsTheScore</h1>
           <p className="text-sm text-gray-600">Track scores and time your matches</p>
           <p className="text-xs mt-1 text-blue-600 italic">Tip: Click the pencil icon to edit team names</p>
         </header>
@@ -53,7 +53,7 @@ export default function Home() {
         <ControlPanel onReset={resetAll} />
 
         <footer className="mt-8 text-center text-sm text-gray-500">
-          <p>Ellon Score Keeper &copy; {new Date().getFullYear()}</p>
+          <p>FitsTheScore &copy; {new Date().getFullYear()}</p>
         </footer>
       </div>
     </div>
