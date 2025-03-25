@@ -21,6 +21,7 @@ export default function TeamScore({
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(name);
 
+  // Ellon's colors for home team, Opposition colors for away team
   const teamColor = team === "home" ? {
     bg: "bg-yellow-100",
     border: "border-maroon",
@@ -86,14 +87,14 @@ export default function TeamScore({
           className={`increment-score w-full py-3 ${teamColor.button} text-white rounded-md font-bold text-lg shadow-md transition active:transform active:scale-95`}
           onClick={onIncrement}
         >
-          <i className="fas fa-plus mr-1"></i> Add Try
+          +TRY
         </button>
         {onDecrement && (
           <button 
             className={`decrement-score w-full py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-md font-bold text-lg shadow-md transition active:transform active:scale-95`}
             onClick={onDecrement}
           >
-            <i className="fas fa-minus mr-1"></i> Deduct
+            -
           </button>
         )}
       </div>
